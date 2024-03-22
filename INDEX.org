@@ -1,0 +1,48 @@
+#+title: CLI TODO APP in Rust
+#+author: Mir Saheb Ali
+
+* Basic Features
+
+** Struct of data
+#+begin_src rust
+
+struct Todo{
+    done: bool,
+    index: u32,
+    name: String,
+}
+struct Todos{
+    tasks: Hashmap<u32, Todo>
+}
+
+
+#+end_src
+** CRUD Operations
+- Create -> Insert Todo
+  #+begin_src rust
+impl Todo{
+    fn new(index:u32,name:String)->Todo{
+        Todo{
+                name,
+                index,
+                done:false
+                }
+    }
+}
+
+impl Todos{
+    fn new()-> Todos{
+Todos{
+    tasks: Hashmap::new()
+}
+    }
+}
+
+  #+end_src
+- Read -> List all todos & Get todo
+- Update -> Rename todo & Toggle completed or not
+- Delete -> Delete Todo || Clear all todos
+
+*** Create:
+**** Insert:
+- We'll use a 'HASHMAP'
